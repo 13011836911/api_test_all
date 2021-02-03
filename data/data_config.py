@@ -7,7 +7,7 @@ class global_var:
     url = '2'
     run = '3'
     run_way = '4'#请求方式
-    header = '5'
+    cookie = '5'
     case_depend = '6'
     data_depend = '7'
     filed_depend = '8'
@@ -28,8 +28,8 @@ def get_run():
 def get_run_way():
     return global_var.run_way
 
-def get_header():
-    return global_var.header
+def get_cookie():
+    return global_var.cookie
 
 def get_case_depend():
     return global_var.case_depend
@@ -49,9 +49,6 @@ def get_expect():
 def get_result():
     return global_var.result
 
-def get_header_value():
-    header = {
-        'header':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36',
-        'cookie':'JSESSIONID=aaa46_cDuOMzLarNAuMBx'
-    }
-    return header
+def get_cookie_value():
+    cookie = {'JSESSIONID': 'aaaB3_nH483zigdWOZDDx'}
+    return cookie

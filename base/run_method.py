@@ -2,18 +2,18 @@ import requests
 import json
 
 class RunMethod:
-    def post_main(self, url, data, header=None):
+    def post_main(self, url, data, cookies=None):
         res = None
-        if header != None:
-            res = requests.post(url=url, data=data, headers=header).json()
+        if cookies != None:
+            res = requests.post(url=url, data=data, cookies=cookies).json()
         else:
             res = requests.post(url=url, data=data).json()
         return res
 
-    def get_main(self, url, data=None, header=None):
+    def get_main(self, url, cookies=None):
         res = None
-        if header != None:
-            res = requests.get(url=url, data=data, headers=header).json()
+        if cookies != None:
+            res = requests.get(url=url, cookies=json.loads(cookies)).json()
         else:
             res = requests.get(url=url)
             if isinstance(res, str):
@@ -23,10 +23,10 @@ class RunMethod:
         return res
 
 
-    def run_main(self, method, url, data=None, header=None):
+    def run_main(self, method, url, data=None, cookies=None):
         res = None
         if method == 'POST':
-            res = self.post_main(url, data, header)
+            res = self.post_main(url, data, cookies)
         else:
-            res = self.get_main(url, header)
+            res = self.get_main(url, cookies)
         return json.dumps(res, ensure_ascii=False, sort_keys=True, indent=2)

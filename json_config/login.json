@@ -1,4 +1,3 @@
-{"login":{"loginId":"songshijie","password":"xiaoneng0924"},
-"添加账号接口":{"siteid":"ucc_1000", "account_type":"DD", "account_name":"ceshi4", "pwd":"111111112", "tel":"123456789"},
-"编辑账号接口":{"siteid":"ucc_1000", "account_type":"DD", "account_name":"ceshi4", "pwd":"111111112", "tel":"123456789"}
+{
+  "login":{"loginId":"songshijie","password":"xiaoneng0924"}
 }

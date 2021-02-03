@@ -16,12 +16,12 @@ class DependDentData:
 
     def run_dependdent(self):
         run_method = RunMethod()
-        row = self.opera_excel.get_rows_num(self.case_id)
+        row = int(self.opera_excel.get_rows_num(self.case_id))
         request_data = self.data.get_data_for_json(row)
-        header = self.data.is_header(row)
+        cookie = self.data.is_cookie(row)
         method = self.data.get_request_method(row)
         url = self.data.get_url(row)
-        res = run_method.run_main(method, url, request_data, header)
+        res = run_method.run_main(method, url, request_data, cookie)
         return res
 
     #根据依赖的key去获取执行依赖测试case的响应，然后返回
