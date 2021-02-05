@@ -28,5 +28,5 @@ class Operation_MYSQL:
 if __name__ == "__main__":
     opera = Operation_MYSQL()
     #insert into user_message(id,user,age,message) values (2,'zhangsan',16,'elsssss')
-    result = opera.search_one("INSERT INTO address(address_id,address,phone) VALUES (5,'济南',135);")
+    result = opera.search_one("SELECT Host,User FROM mysql.user;")
     print(result)
