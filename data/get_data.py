@@ -2,6 +2,7 @@
 from base.operation_excel import OperationExcel
 from data import data_config
 from base.operation_json import OperationJson
+from base.connect_db import Operation_MYSQL
 
 class GetData:
 
@@ -64,6 +65,13 @@ class GetData:
         if expect == '':
             return None
         return expect
+
+    #通过mysql获取预期结果
+    def get_expcet_data_from_mysql(self, row):
+        op_mysql = Operation_MYSQL()
+        sql = self.get_expect_data(row)
+        res = op_mysql.search_one(sql).decode('unicode-escape')
+        return res
 
     #写入case执行结果
     def write_result(self, row, value):
