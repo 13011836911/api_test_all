@@ -8,6 +8,7 @@ from base.sendEmail import SendEmail
 from json_config.depend_data import DependDentData
 from base.operation_json import OperationJson
 from base.operation_header import OperationHeader
+from base.logger import logger
 
 sys.path.append("D:\projectPython\DjangoProject")
 class RunTest:
@@ -19,6 +20,7 @@ class RunTest:
         self.opera_json = OperationJson('../json_config/cookie.json')
 
     def go_on_run(self):
+        logger.info("*************** 开始执行用例 ***************")
         res = None
         pass_count = []
         fail_count = []
@@ -58,10 +60,10 @@ class RunTest:
                     else:
                         self.data.write_result(i, 'fail')
                         fail_count.append(i)
-                    print(res)
             self.mail.send_main(pass_count, fail_count)
         except requests.exceptions.ConnectionError:
             print('连接错误')
+        logger.info("*************** 结束执行用例 ***************")
         return res
 
 
